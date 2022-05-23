@@ -1,0 +1,27 @@
+entity CalendarEvent {
+    descriptor String required,
+	startDate Instant,
+	endDate Instant,
+	isExactly Boolean
+}
+
+entity Family {
+    name String required
+}
+
+entity Userf {
+    login String required,
+    pass String,
+    name String
+}
+
+relationship ManyToOne {
+	Userf to Family,
+	CalendarEvent to Family
+}
+
+// Set pagination options
+paginate CalendarEvent with pagination
+
+// Set service options to all except few
+service all with serviceImpl

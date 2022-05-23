@@ -1,0 +1,28 @@
+{
+  "familyTimeApp": {
+    "calendarEvent": {
+      "home": {
+        "title": "Calendar Events",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Calendar Event",
+        "createOrEditLabel": "Создать или отредактировать Calendar Event",
+        "notFound": "Calendar Events не найдено"
+      },
+      "created": "Новый Calendar Event создан с идентификатором {{ param }}",
+      "updated": "Calendar Event обновлен с идентификатором {{ param }}",
+      "deleted": "Calendar Event удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Calendar Event {{ id }}?"
+      },
+      "detail": {
+        "title": "Calendar Event"
+      },
+      "id": "ID",
+      "descriptor": "Descriptor",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "isExactly": "Is Exactly",
+      "family": "Family"
+    }
+  }
+}

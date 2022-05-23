@@ -1,0 +1,27 @@
+{
+  "familyTimeApp": {
+    "userf": {
+      "home": {
+        "title": "Userfs",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Userf",
+        "createOrEditLabel": "Создать или отредактировать Userf",
+        "notFound": "Userfs не найдено"
+      },
+      "created": "Новый Userf создан с идентификатором {{ param }}",
+      "updated": "Userf обновлен с идентификатором {{ param }}",
+      "deleted": "Userf удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Userf {{ id }}?"
+      },
+      "detail": {
+        "title": "Userf"
+      },
+      "id": "ID",
+      "login": "Login",
+      "pass": "Pass",
+      "name": "Name",
+      "family": "Family"
+    }
+  }
+}

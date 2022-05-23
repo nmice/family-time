@@ -1,0 +1,40 @@
+{
+  "applications": "*",
+  "changelogDate": "20220523203745",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "calendar_event",
+  "fields": [
+    {
+      "fieldName": "descriptor",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "isExactly",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "CalendarEvent",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "family",
+      "otherEntityRelationshipName": "calendarEvent",
+      "relationshipName": "family",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

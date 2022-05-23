@@ -1,0 +1,36 @@
+{
+  "applications": "*",
+  "changelogDate": "20220523203747",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "userf",
+  "fields": [
+    {
+      "fieldName": "login",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "pass",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Userf",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "family",
+      "otherEntityRelationshipName": "userf",
+      "relationshipName": "family",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}
