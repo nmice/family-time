@@ -1,0 +1,107 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-calendar-event-heading"
+        data-cy="CalendarEventCreateUpdateHeading"
+        jhiTranslate="familyTimeApp.calendarEvent.home.createOrEditLabel"
+      >
+        Create or edit a Calendar Event
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="familyTimeApp.calendarEvent.descriptor" for="field_descriptor">Descriptor</label>
+          <input
+            type="text"
+            class="form-control"
+            name="descriptor"
+            id="field_descriptor"
+            data-cy="descriptor"
+            formControlName="descriptor"
+          />
+          <div *ngIf="editForm.get('descriptor')!.invalid && (editForm.get('descriptor')!.dirty || editForm.get('descriptor')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('descriptor')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="familyTimeApp.calendarEvent.startDate" for="field_startDate">Start Date</label>
+          <div class="d-flex">
+            <input
+              id="field_startDate"
+              data-cy="startDate"
+              type="datetime-local"
+              class="form-control"
+              name="startDate"
+              formControlName="startDate"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="familyTimeApp.calendarEvent.endDate" for="field_endDate">End Date</label>
+          <div class="d-flex">
+            <input
+              id="field_endDate"
+              data-cy="endDate"
+              type="datetime-local"
+              class="form-control"
+              name="endDate"
+              formControlName="endDate"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="familyTimeApp.calendarEvent.isExactly" for="field_isExactly">Is Exactly</label>
+          <input type="checkbox" class="form-check" name="isExactly" id="field_isExactly" data-cy="isExactly" formControlName="isExactly" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="familyTimeApp.calendarEvent.family" for="field_family">Family</label>
+          <select class="form-control" id="field_family" data-cy="family" name="family" formControlName="family">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="familyOption.id === editForm.get('family')!.value?.id ? editForm.get('family')!.value : familyOption"
+              *ngFor="let familyOption of familiesSharedCollection; trackBy: trackFamilyById"
+            >
+              {{ familyOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

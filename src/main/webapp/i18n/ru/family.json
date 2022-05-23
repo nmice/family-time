@@ -1,0 +1,26 @@
+{
+  "familyTimeApp": {
+    "family": {
+      "home": {
+        "title": "Families",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Family",
+        "createOrEditLabel": "Создать или отредактировать Family",
+        "notFound": "Families не найдено"
+      },
+      "created": "Новый Family создан с идентификатором {{ param }}",
+      "updated": "Family обновлен с идентификатором {{ param }}",
+      "deleted": "Family удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Family {{ id }}?"
+      },
+      "detail": {
+        "title": "Family"
+      },
+      "id": "ID",
+      "name": "Name",
+      "userf": "Userf",
+      "calendarEvent": "Calendar Event"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="userf">
+      <h2 data-cy="userfDetailsHeading"><span jhiTranslate="familyTimeApp.userf.detail.title">Userf</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ userf.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="familyTimeApp.userf.login">Login</span></dt>
+        <dd>
+          <span>{{ userf.login }}</span>
+        </dd>
+        <dt><span jhiTranslate="familyTimeApp.userf.pass">Pass</span></dt>
+        <dd>
+          <span>{{ userf.pass }}</span>
+        </dd>
+        <dt><span jhiTranslate="familyTimeApp.userf.name">Name</span></dt>
+        <dd>
+          <span>{{ userf.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="familyTimeApp.userf.family">Family</span></dt>
+        <dd>
+          <div *ngIf="userf.family">
+            <a [routerLink]="['/family', userf.family?.id, 'view']">{{ userf.family?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/userf', userf.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
